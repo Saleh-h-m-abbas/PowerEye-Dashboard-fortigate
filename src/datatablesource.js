@@ -1,13 +1,18 @@
 export const userColumns = [
   { field: "id", headerName: "ID", width: 70 },
   {
-    field: "user",
+    field: "authType",
+    headerName: "Type",
+    width: 120,
+  },
+  {
+    field: "username",
     headerName: "User",
-    width: 230,
+    width: 150,
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
-          <img className="cellImg" src={params.row.img} alt="avatar" />
+          {!params.row.userPhoto?  <div></div>:<img className="cellImg" src={params.row.userPhoto} alt="" />}
           {params.row.username}
         </div>
       );
@@ -16,24 +21,62 @@ export const userColumns = [
   {
     field: "email",
     headerName: "Email",
-    width: 230,
+    width: 210,
+  },
+  {
+    field: "phoneNumber",
+    headerName: "Phone",
+    width: 135,
   },
 
+
   {
-    field: "address",
-    headerName: "Address",
-    width: 100,
+    field: "user_ip",
+    headerName: "User IP",
+    width: 120,
   },
   {
-    field: "status",
+    field: "user_mac",
+    headerName: "User Mac",
+    width: 140,
+  },
+  {
+    field: "ssid",
+    headerName: "SSID",
+    width: 140,
+  },
+  {
+    field: "ap_ip",
+    headerName: "AP IP",
+    width: 140,
+  },
+  {
+    field: "ap_mac",
+    headerName: "AP MAC",
+    width: 140,
+  },
+  {
+    field: "loginStatus",
     headerName: "Status",
-    width: 160,
+    width: 80,
     renderCell: (params) => {
+      const status= params.row.loginStatus;
       return (
-        <div className={`cellWithStatus ${params.row.status}`}>
-          {params.row.status}
-        </div>
+          <div>{status==="1"?"Login":""}</div>
       );
     },
   },
+  {
+    field: "created",
+    headerName: "Created At",
+    width: 140,
+    renderCell: (params) => {
+      const date= params.row.created;
+      return (
+          <div>{`${date.toDate().toDateString()}`}</div>
+      );
+    },
+    
+  },
+
 ];
