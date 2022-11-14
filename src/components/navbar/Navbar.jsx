@@ -2,6 +2,7 @@ import "./navbar.scss";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 
 const Navbar = () => {
   const { dispatch } = useContext(DarkModeContext);
@@ -18,12 +19,14 @@ const Navbar = () => {
             <LanguageOutlinedIcon className="icon" />
             English
           </div> */}
-          <div className="item">
+          
+          {/* <div className="item">
             <DarkModeOutlinedIcon
               className="icon"
               onClick={() => dispatch({ type: "TOGGLE" })}
             />
-          </div>
+          </div> */}
+          {/* <ExitToAppIcon className="icon" /> */}
           {/* <div className="item">
             <FullscreenExitOutlinedIcon className="icon" />
           </div> */}
