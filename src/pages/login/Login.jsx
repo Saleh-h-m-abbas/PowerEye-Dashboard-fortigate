@@ -32,14 +32,15 @@ const Login = () => {
   return (
     <div className="login">
       <form onSubmit={handleLogin}>
+      <div className="title">PowerEye Login</div>
         <input
           type="email"
-          placeholder="email"
+          placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
-          placeholder="password"
+          placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
